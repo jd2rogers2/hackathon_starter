@@ -1,0 +1,38 @@
+# version: '3.1'
+
+services:
+  web-client:
+    build:
+      context: ./web-client
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3001:3001
+    volumes:
+      - ./web-client:/app
+    environment:
+      - FASTAPI_SERVICE_URL=localhost:3000
+      - NODE_SERVICE_URL=localhost:3002
+
+  # fastapi-service:
+  #   build:
+  #     context: ./fastapi-service
+  #     dockerfile: Dockerfile.dev
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - ./fastapi-service:/app
+  #   environment:
+  #     - WEB_CLIENT_URL=localhost:3001
+
+  node-service:
+    build:
+      context: ./node-service
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3002:3002
+    volumes:
+      - ./node-service:/app
+    environment:
+      - WEB_CLIENT_URL=localhost:3001
+      - PORT=3002
+      - MONGO_CONNECTION=${MONGO_CONNECTION}
