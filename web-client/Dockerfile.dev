@@ -1,12 +1,16 @@
-FROM --platform=linux/arm64 node:20.8-bookworm
+FROM node:21.6.2-alpine3.18
 
 WORKDIR /app
 
 COPY package.json /app
 COPY package-lock.json /app
+COPY vite.config.ts /app
+COPY index.html /app
+COPY tsconfig.json /app
+COPY tsconfig.node.json /app
+COPY /src /app
 
-RUN npm install
+RUN npm ci
 
-COPY . /app
-
+# CMD tail -f /dev/null
 CMD npm run dev

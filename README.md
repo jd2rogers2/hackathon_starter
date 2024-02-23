@@ -3,7 +3,6 @@
 
 Just stubbing a small web project that can be built on or forked for an upcoming hackathon
 
-
 ## Services
 
 this includes a:
@@ -14,6 +13,6 @@ this includes a:
 
 ## Getting started
 
-copy the contents of `.env.sample` into a `.env` file in the root and get values
-`docker compose build`
-`docker compose up`
+1. copy the contents of `.env.sample` into a `.env` file in the root and get values
+2. `docker compose build`
+3. `docker compose up`
