@@ -11,7 +11,7 @@ const getEventById = async (req, res) => {
 };
 
 const getAllEvents = async (req, res) => {
-    res.send({ events: [] });
+    res.send({ hello: 'world' });
 };
 
 const updateEvent = async (req, res) => {

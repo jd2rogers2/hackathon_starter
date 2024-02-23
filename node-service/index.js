@@ -7,8 +7,10 @@ const { eventsRouter } = require('./routes');
 
 let corsOptions = {
   credentials: true,
-  origin: process.env.WEB_CLIENT_URL,
+  origin: 'http://' + process.env.WEB_CLIENT_URL,
 };
+
+console.log('corsOptions', corsOptions);
 
 const app = express();
 
@@ -23,5 +25,5 @@ app.use('/events', eventsRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Hackr_harvest api listening on port ${port}`);
+  console.log(`hackathon api listening on port ${port}`);
 });
