@@ -25,6 +25,7 @@ services:
       - WEB_CLIENT_URL=localhost:5173
       - PORT=3000
       - MONGO_CONNECTION=${MONGO_CONNECTION}
+      - MONGO_DATABASE_NAME=${MONGO_DATABASE_NAME}
 
   # fastapi-service:
   #   build:
